@@ -6,3 +6,7 @@
 	path = baselines/il_lib
 	url = https://github.com/wensi-ai/il_lib.git
 	branch = main
+[submodule "baselines/openvla-oft"]
+	path = baselines/openvla-oft
+	url = https://github.com/evansh666/openvla-oft.git
+	branch = main
