@@ -13,23 +13,23 @@ You can also start with the original openvla-oft [repo](https://github.com/mooji
 ### Installation
 
 ```
-conda create -n openvla-oft python=3.10 cudatoolkit-dev -c conda-forge -y
+conda create -n openvla-oft python=3.10 cudatoolkit-dev "setuptools<=79" -c conda-forge -y
 conda activate openvla-oft
-
-pip install packaging ninja
-ninja --version; echo $?  # Verify Ninja --> should return exit code "0"
-pip install "flash-attn==2.5.5" --no-build-isolation
-
-# Install for RLDS dataset: tensorflow, tensorflow_datasets, tensorflow_hub, apache_beam
-pip install tensorflow_hub, apache_beam
 
 # Install behavior for server deploy 
 cd $PATH_TO_BEHAVIOR_1K
 pip install -e bddl
 pip install -e OmniGibson[eval]
 
-cd openvla-oft
+cd $PATH_TO_OPENVLA_OFT
 pip install -e .
+
+pip install packaging ninja
+ninja --version; echo $?  # Verify Ninja --> should return exit code "0"
+pip install "flash-attn==2.5.5" --no-build-isolation
+
+# Install for RLDS dataset: tensorflow, tensorflow_datasets, tensorflow_hub, apache_beam
+pip install tensorflow_hub apache_beam
 ```
 
 ### Data Conversion
