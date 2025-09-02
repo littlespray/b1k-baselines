@@ -34,6 +34,11 @@ pip install tensorflow_hub apache_beam
 
 ### Data Conversion
 
+**
+We provide a lightly trained checkpoint [here](https://drive.google.com/file/d/105WSvNAQdMXjtS0sZHfB_-sVQkkGCDE6/view?usp=sharing). If you would like to run eval only feel free to skip to the last section. 
+**
+
+
 Since Openvla-oft requires RLDS dataset, we need first convert BEHAVIOR dataset into RLDS format. 
 
 1. See instructions for converting to RLDS [here](RLDS_builder/README.md). 

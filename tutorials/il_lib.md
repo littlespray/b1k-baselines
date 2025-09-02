@@ -20,10 +20,14 @@ cd baselines/il_lib
 pip install -e .
 ```
 
-Alternatively, feel free to have it installed in a new conda env, although you need to have the complete behavior stack installed within the conda env to perform online evaluation during training.
+Alternatively, feel free to have it installed in a new conda env, although you need to have the complete behavior stack installed within this conda env to perform online evaluation during training.
 
 
 ### Model Training
+
+**
+We provide a lightly trained WB-VIMA checkpoint [here](https://drive.google.com/file/d/14oapcdvt8va7srLw1bs0j5lsd5FrcxWV/view?usp=sharing). If you would like to run eval only feel free to skip to the last section. 
+**
 
 IL_LIB includes implementations for common behavior cloning baselines, including RGB(D) [Diffusion Poilcy](https://diffusion-policy.cs.columbia.edu/), [3D Diffusion Policy](https://3d-diffusion-policy.github.io/), [ACT](https://tonyzhaozh.github.io/aloha/), [BC-RNN](https://robomimic.github.io/), [WB-VIMA](https://behavior-robot-suite.github.io/). You can find all the config files under `il_lib/configs/arch`. We will use `WB-VIMA` as the example for the following tutorial.
 
@@ -58,5 +62,5 @@ After finetuning, you can run evaluation by following the steps below:
 
     ```
     conda activate behavior 
-    python Omnigibson/omnigibson/learning/eval.py policy=websocket task.name=turning_on_radio
+    python Omnigibson/omnigibson/learning/eval.py policy=websocket task.name=turning_on_radio eval._target_=omnigibson.learning.wrapprs.RichObservationWrapper
     ```
