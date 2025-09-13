@@ -68,5 +68,5 @@ After finetuning, you can run evaluation by following the steps below:
     Assume you have behavior env installed (check https://github.com/StanfordVL/BEHAVIOR-1K for more details), run the following command within the BEHAVIOR-1K directory:
     ```
     conda activate behavior 
-    python Omnigibson/omnigibson/learning/eval.py policy=websocket task.name=turning_on_radio
+    python OmniGibson/omnigibson/learning/eval.py policy=websocket task.name=turning_on_radio log_path=$LOG_PATH
     ```
