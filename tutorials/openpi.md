@@ -30,7 +30,12 @@ uv pip install -e OmniGibson[eval]
 
 ### Finetune OpenPi
 
-Before we can run training, we need to compute the normalization statistics for the training data. Run the script below
+**
+We provide a OpenPi checkpoint for picking_up_trash task [here](https://drive.google.com/file/d/1G_ACu3uUP_9RmXDgqa7307aFt28G-vJN/view?usp=sharing). This checkpoint has been trained for 50k steps.
+If you would like to run eval only feel free to skip to the last section. 
+**
+
+Before we can run training, we need to compute the normalization statistics for the training data. Change line 98 of `compute_norm_stats.py` to be the task name you want (or None to include all tasks), then run the script below
 
 ```
 uv run scripts/compute_norm_stats.py --config-name pi0_b1k
@@ -38,7 +43,7 @@ uv run scripts/compute_norm_stats.py --config-name pi0_b1k
 This will create `norm_stats.json` under `assets/pi0_b1k/behavior-1k/2025-challenge-demos`
 
 
-After this, run the following command to fintune OpenPi:
+After this, change line 137 of `data_loader.py` to be the task name you want (or None to include all tasks), then run the following command to fintune OpenPi:
 
 ```
 XLA_PYTHON_CLIENT_MEM_FRACTION=0.9 uv run scripts/train_val.py pi0_b1k \
@@ -58,7 +63,7 @@ After finetuning, you can run evaluation by following the steps below:
 
     ```
     source .venv/bin/activate
-    uv run scripts/serve_b1k.py policy:checkpoint --policy.config=pi0_b1k --policy.dir=$PATH_TO_CKPT
+    uv run scripts/serve_b1k.py --task_name=$TASK_NAME policy:checkpoint --policy.config=pi0_b1k --policy.dir=$PATH_TO_CKPT
     ```
     This opens a connection listening on 0.0.0.0:8000.
 
