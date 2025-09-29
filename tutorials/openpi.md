@@ -31,7 +31,10 @@ uv pip install -e OmniGibson[eval]
 ### Finetune OpenPi
 
 **
-We provide a OpenPi checkpoint for picking_up_trash task [here](https://drive.google.com/file/d/1G_ACu3uUP_9RmXDgqa7307aFt28G-vJN/view?usp=sharing). This checkpoint has been trained for 50k steps.
+We provide a Pi0 checkpoint for:
+    - turning_on_radio task [here](https://drive.google.com/file/d/1tsOB6Hfw27eo_V2P7lYZZUGIfgyTbck_/view?usp=sharing). This checkpoint has been trained for 50k steps.
+    - picking_up_trash task [here](https://drive.google.com/file/d/1G_ACu3uUP_9RmXDgqa7307aFt28G-vJN/view?usp=sharing). This checkpoint has been trained for 50k steps.
+
 If you would like to run eval only feel free to skip to the last section. 
 **
 
