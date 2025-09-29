@@ -30,13 +30,13 @@ uv pip install -e OmniGibson[eval]
 
 ### Finetune OpenPi
 
-**
 We provide a Pi0 checkpoint for:
-    - turning_on_radio task [here](https://drive.google.com/file/d/1tsOB6Hfw27eo_V2P7lYZZUGIfgyTbck_/view?usp=sharing). This checkpoint has been trained for 50k steps.
+
+    - turning_on_radio task [here](https://drive.google.com/file/d/1YU7evHBj7vfjmE-tNK-Rbie8ytholQTc/view?usp=sharing). This checkpoint has been trained for 50k steps.
+
     - picking_up_trash task [here](https://drive.google.com/file/d/1G_ACu3uUP_9RmXDgqa7307aFt28G-vJN/view?usp=sharing). This checkpoint has been trained for 50k steps.
 
 If you would like to run eval only feel free to skip to the last section. 
-**
 
 Before we can run training, we need to compute the normalization statistics for the training data. Change line 98 of `compute_norm_stats.py` to be the task name you want (or None to include all tasks), then run the script below
 
