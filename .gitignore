@@ -1,2 +1,4 @@
 tutorials/test.*
 .vscode/
+BEHAVIOR-1K/
+baselines/il_lib/outputs/
